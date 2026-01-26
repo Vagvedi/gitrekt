@@ -1,0 +1,27 @@
+{
+  "name": "gitrekt",
+  "version": "1.0.0",
+  "description": "GitHub Roaster - Get brutally roasted based on your GitHub activity",
+  "main": "backend/dist/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npm run dev --workspace=backend & npm run dev --workspace=frontend",
+    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
+    "start": "node backend/dist/index.js"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "keywords": ["github", "roaster", "analysis", "code-quality"],
+  "author": "Gitrekt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vagvedi/gitrekt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vagvedi/gitrekt/issues"
+  },
+  "homepage": "https://github.com/Vagvedi/gitrekt#readme"
+}

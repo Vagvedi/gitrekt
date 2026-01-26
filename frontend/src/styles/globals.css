@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark-950 text-gray-100 font-sans;
+  }
+
+  input {
+    @apply transition-colors duration-200;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-neon-purple via-neon-cyan to-neon-green bg-clip-text text-transparent;
+  }
+
+  .terminal-text {
+    @apply font-mono text-sm;
+  }
+
+  .gradient-border {
+    @apply border-2 border-transparent bg-clip-padding bg-gradient-to-r from-neon-purple to-neon-cyan;
+  }
+}
+
+/* Glitch effect for critical roasts */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 #ff00de, -2px 0 #00ffff;
+  }
+  25% {
+    text-shadow: -2px 0 #ff00de, 2px 0 #00ffff;
+  }
+  50% {
+    text-shadow: 2px 0 #00ffff, -2px 0 #ff00de;
+  }
+  75% {
+    text-shadow: -2px 0 #00ffff, 2px 0 #ff00de;
+  }
+  100% {
+    text-shadow: 2px 0 #ff00de, -2px 0 #00ffff;
+  }
+}
+
+.glitch-text {
+  animation: glitch 0.4s infinite;
+}
+
+/* Typewriter effect */
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 3px solid rgba(10, 255, 181, 0.75);
+  white-space: nowrap;
+  animation: typewriter 6s steps(40, end), blink 0.75s step-end infinite;
+}
+
+@keyframes blink {
+  0%,
+  75%,
+  100% {
+    border-color: rgba(10, 255, 181, 0.75);
+  }
+  25% {
+    border-color: transparent;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(15, 20, 25);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(168, 85, 247);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(6, 182, 212);
+}
