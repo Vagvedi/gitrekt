@@ -414,3 +414,5 @@ A: They're deterministic and based on real metrics. But interpretation is subjec
 **Built with ❤️ by developers who believe in brutal honesty.**
 
 **Get roasted at [gitrekt.dev](https://gitrekt.dev)**
+   
+ 
