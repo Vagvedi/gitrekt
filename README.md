@@ -395,11 +395,7 @@ A: The app returns helpful error messages. GitHub allows 5000 requests/hour with
 **Q: Can the roasts be wrong?**
 A: They're deterministic and based on real metrics. But interpretation is subjective. A high fork ratio might be legitimate if you contribute significantly to each fork.
 
-## 📞 Support
 
-- GitHub Issues: [gitrekt/issues](https://github.com/Vagvedi/gitrekt/issues)
-- Email: support@gitrekt.dev
-- Discord: [Join our server](https://discord.gg/gitrekt)
 
 ## 🙌 Acknowledgments
 
@@ -413,6 +409,7 @@ A: They're deterministic and based on real metrics. But interpretation is subjec
 
 **Built with ❤️ by developers who believe in brutal honesty.**
 
-**Get roasted at [gitrekt.dev](https://gitrekt.dev)**
-   
+
+  
+ 
  
