@@ -142,9 +142,11 @@ export interface UserRepositoriesData {
           };
         };
         languages: {
-          nodes: Array<{
-            name: string;
+          edges: Array<{
             size: number;
+            node: {
+              name: string;
+            };
           }>;
         };
         readme: {

@@ -10,7 +10,7 @@
 export const USER_REPOSITORIES_QUERY = `
   query GetUserRepositories($login: String!, $after: String) {
     user(login: $login) {
-      repositories(first: 100, after: $after, affiliations: OWNER) {
+      repositories(first: 100, after: $after, affiliations: [OWNER, COLLABORATOR, ORGANIZATION_MEMBER]) {
         nodes {
           name
           description
@@ -43,9 +43,11 @@ export const USER_REPOSITORIES_QUERY = `
             }
           }
           languages(first: 10) {
-            nodes {
-              name
+            edges {
               size
+              node {
+                name
+              }
             }
           }
           readme: object(expression: "HEAD:README.md") {

@@ -68,16 +68,28 @@ export class GitHubClient {
 
     while (hasNextPage) {
       try {
-        const response = (await this.graphqlClient(USER_REPOSITORIES_QUERY, {
+        const rawResponse = await this.graphqlClient(USER_REPOSITORIES_QUERY, {
           login: username,
           after: endCursor,
-        })) as unknown as GraphQLResponse<UserRepositoriesData>;
-
-        if (response.errors) {
-          throw new Error(response.errors[0]?.message);
+        });
+        
+        logger.debug({ rawResponse: JSON.stringify(rawResponse).slice(0, 500) }, 'Raw GraphQL response');
+        
+        const response = rawResponse as unknown;
+        
+        // Handle both wrapped and unwrapped GraphQL responses
+        const data = (response as any)?.data || response;
+        
+        if (data.errors) {
+          throw new Error(data.errors[0]?.message);
         }
 
-        const repos = response.data.user.repositories;
+        if (!data || !data.user) {
+          logger.error({ response }, 'Invalid response structure');
+          throw new Error('Invalid GraphQL response: missing data or user');
+        }
+
+        const repos = data.user.repositories;
         const { nodes, pageInfo, totalCount } = repos;
 
         logger.debug(
@@ -87,7 +99,7 @@ export class GitHubClient {
 
         // Transform GraphQL response to REST format
         repositories.push(
-          ...nodes.map((repo) => ({
+          ...nodes.map((repo: any) => ({
             id: 0, // GraphQL doesn't return ID
             name: repo.name,
             full_name: `${username}/${repo.name}`,
@@ -111,8 +123,8 @@ export class GitHubClient {
 
         hasNextPage = pageInfo.hasNextPage;
         endCursor = pageInfo.endCursor;
-      } catch (error) {
-        logger.error({ username, error }, 'Failed to fetch repositories page');
+      } catch (error: any) {
+        logger.error({ username, error: error?.message || error, stack: error?.stack }, 'Failed to fetch repositories page');
         throw new Error(`Failed to fetch repositories for ${username}`);
       }
     }
@@ -135,17 +147,20 @@ export class GitHubClient {
 
     while (hasNextPage) {
       try {
-        const response = (await this.graphqlClient(COMMIT_HISTORY_QUERY, {
+        const rawResponse: any = await this.graphqlClient(COMMIT_HISTORY_QUERY, {
           owner,
           name: repo,
           after: endCursor,
-        })) as unknown as GraphQLResponse<CommitHistoryData>;
-
-        if (response.errors) {
-          throw new Error(response.errors[0]?.message);
+        });
+        
+        // Handle both wrapped and unwrapped GraphQL responses
+        const data: any = (rawResponse as any)?.data || rawResponse;
+        
+        if (data.errors) {
+          throw new Error(data.errors[0]?.message);
         }
 
-        const history = response.data.repository.defaultBranchRef?.target?.history;
+        const history: any = data.repository?.defaultBranchRef?.target?.history;
         if (!history) {
           logger.warn({ owner, repo }, 'No commit history found');
           return { commits, totalCount };

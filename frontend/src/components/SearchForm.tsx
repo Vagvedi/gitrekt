@@ -5,7 +5,7 @@ import { useRoastStore } from '../store/roast';
 
 export function SearchForm() {
   const [input, setInput] = useState('');
-  const { setLoading, setAnalysis, setError, setUsername, loading } = useRoastStore();
+  const { setLoading, setAnalysis, setError, setUsername, loading, error } = useRoastStore();
   const [localError, setLocalError] = useState<string | null>(null);
 
   // Extracts a GitHub username from various input forms (username, URL, email-like)
@@ -104,8 +104,8 @@ export function SearchForm() {
               {extractUsername(input) ? `https://github.com/${extractUsername(input)}` : 'Invalid username'}
             </motion.span>
           )}
-          {(localError || (useRoastStore().error)) && (
-            <p className="text-red-400 text-sm mt-2">{localError || useRoastStore().error}</p>
+          {(localError || error) && (
+            <p className="text-red-400 text-sm mt-2">{localError || error}</p>
           )}
         </div>
 
