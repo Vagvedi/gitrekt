@@ -25,35 +25,36 @@ GITREKT is a **serious GitHub analysis engine** that evaluates your profile acro
 
 ## 📁 Project Structure
 
+```
 gitrekt/
-├── backend/ # Node.js + Express API
-│ ├── src/
-│ │ ├── api/ # Routes & middleware
-│ │ ├── github/ # GitHub API integration
-│ │ ├── analysis/ # Metrics & static analysis
-│ │ ├── roast/ # Roast generation engine
-│ │ └── utils/ # Helpers & config
-│ ├── package.json
-│ ├── tsconfig.json
-│ └── README.md
+├── backend/                         # Node.js + Express API
+│   ├── src/
+│   │   ├── api/                     # Routes & middleware
+│   │   ├── github/                  # GitHub API integration
+│   │   ├── analysis/                # Metrics & static analysis
+│   │   ├── roast/                   # Roast generation engine
+│   │   └── utils/                   # Helpers & config
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── README.md
 │
-├── frontend/ # React + Vite UI
-│ ├── src/
-│ │ ├── components/ # UI components
-│ │ ├── services/ # API client
-│ │ ├── store/ # Zustand state
-│ │ ├── styles/ # Tailwind & animations
-│ │ └── App.tsx
-│ ├── package.json
-│ ├── vite.config.ts
-│ └── README.md
+├── frontend/                        # React + Vite UI
+│   ├── src/
+│   │   ├── components/              # UI components
+│   │   ├── services/                # API client
+│   │   ├── store/                   # Zustand state
+│   │   ├── styles/                  # Tailwind & animations
+│   │   └── App.tsx
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── README.md
 │
-├── ARCHITECTURE.md # System design & data flow
-├── package.json # Workspace config
-└── README.md # This file
+├── ARCHITECTURE.md                  # System design & data flow
+├── package.json                     # Workspace config
+└── README.md                        # This file
+ 
+```
 
-
----
 
 ## 🏗️ Tech Stack
 
