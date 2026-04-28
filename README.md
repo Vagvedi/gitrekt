@@ -2,7 +2,7 @@
 
 **Get brutally roasted based on your actual GitHub activity and code metrics.**
 
-GITREKT is a production-grade web application that analyzes **public GitHub profiles** and generates **data-driven, deterministic roasts** based on real contribution patterns and code quality metrics.
+GITREKT is a production-grade web application that analyzes public GitHub user profiles and generates data-driven, deterministic roasts based on real code quality metrics and contribution patterns.
 
 > Every roast is backed by measurable signals.  
 > No hallucinations. No BS. Just facts.
