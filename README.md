@@ -1,82 +1,36 @@
 
 
+
 # 🔥 GITREKT — GitHub Roaster
+
 
 
 **Get brutally roasted based on your actual GitHub activity and code metrics.**
 
-GITREKT is a production-grade web application that analyzes **public GitHub profiles** and generates **data-driven, deterministic roasts** based on real contribution patterns and code quality metrics.
+A production-grade web application that analyzes **public GitHub profiles** and generates **data-driven, deterministic roasts** based on real contribution patterns and code quality metrics.
 
 > Every roast is backed by measurable signals.  
 > No hallucinations. No BS. Just facts.
 
 ---
 
+## 🚀 Tech Stack
 
-## 🧠 What This Is
+[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
+[![Zustand](https://img.shields.io/badge/Zustand-000000?style=for-the-badge&logo=zustand&logoColor=white)](https://zustand-demo.pmnd.rs/)
+[![Octokit](https://img.shields.io/badge/Octokit-2088FF?style=for-the-badge&logo=github&logoColor=white)](https://octokit.github.io/rest.js/)
+[![Babel](https://img.shields.io/badge/Babel-F9DC3E?style=for-the-badge&logo=babel&logoColor=black)](https://babeljs.io/)
+[![Zod](https://img.shields.io/badge/Zod-3E82B7?style=for-the-badge&logo=zod&logoColor=white)](https://zod.dev/)
+[![Redis](https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=redis&logoColor=white)](https://redis.io/)
+[![Pino](https://img.shields.io/badge/Pino-E67E22?style=for-the-badge&logo=pino&logoColor=white)](https://getpino.io/)
 
-Not a demo. Not a joke generator.
-
-GITREKT is a **serious GitHub analysis engine** that evaluates your profile across:
-
-- **Repository Health** — inactivity, abandonment, consistency  
-- **Code Quality** — complexity, duplication, god-file detection  
-- **Contribution Patterns** — forks vs originals, language spread  
-- **Engagement** — PRs, issues, collaboration signals  
-
----
-
-## 📁 Project Structure
-
-gitrekt/
-├── backend/ # Node.js + Express API
-│ ├── src/
-│ │ ├── api/ # Routes & middleware
-│ │ ├── github/ # GitHub API integration
-│ │ ├── analysis/ # Metrics & static analysis
-│ │ ├── roast/ # Roast generation engine
-│ │ └── utils/ # Helpers & config
-│ ├── package.json
-│ ├── tsconfig.json
-│ └── README.md
-│
-├── frontend/ # React + Vite UI
-│ ├── src/
-│ │ ├── components/ # UI components
-│ │ ├── services/ # API client
-│ │ ├── store/ # Zustand state
-│ │ ├── styles/ # Tailwind & animations
-│ │ └── App.tsx
-│ ├── package.json
-│ ├── vite.config.ts
-│ └── README.md
-│
-├── ARCHITECTURE.md # System design & data flow
-├── package.json # Workspace config
-└── README.md # This file
-
-
----
-
-## 🏗️ Tech Stack
-
-### Backend
-- **Runtime**: Node.js  
-- **Framework**: Express.js  
-- **Language**: TypeScript  
-- **GitHub API**: Octokit (REST + GraphQL)  
-- **Static Analysis**: Babel Parser (AST)  
-- **Validation**: Zod  
-- **Logging**: Pino  
-- **Cache**: In-memory (Redis-ready)  
-
-### Frontend
-- **UI**: React 18  
-- **Build Tool**: Vite  
-- **Styling**: TailwindCSS (dark mode)  
-- **Animations**: Framer Motion  
-- **State Management**: Zustand  
-- **HTTP Client**: Axios  
+</div>
 
 ---
 
@@ -140,7 +94,7 @@ gitrekt/
 
 ---
 
-## � Metrics Explained
+## 📈 Metrics Explained
 
 ### 🗑️ Abandonment Score
 ```
@@ -219,7 +173,7 @@ npm run dev
 
 ---
 
-## �️ Usage
+## 🛠️ Usage
 
 ### 1. **Enter GitHub Username**
 Simply type any GitHub username in the search bar.
@@ -271,7 +225,7 @@ REDIS_URL=redis://localhost:6379  # Optional
 
 ---
 
-## � Performance
+## 📊 Performance
 
 - 🚀 **Median response time**: < 10s
 - ⚡ **Cache hit**: < 100ms
@@ -322,4 +276,6 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 
 **Made with 🔥 and lots of ☕**
+
+
 
